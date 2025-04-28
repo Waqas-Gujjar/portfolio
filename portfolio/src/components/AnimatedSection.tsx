@@ -6,13 +6,15 @@ interface AnimatedSectionProps {
   className?: string;
   delay?: number;
   direction?: 'up' | 'down' | 'left' | 'right';
+  id?: string;
 }
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ 
   children, 
   className = '', 
   delay = 0.2,
-  direction = 'up'
+  direction = 'up',
+  id
 }) => {
   // Get initial direction values
   const getInitialDirection = () => {
@@ -36,6 +38,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
 
   return (
     <motion.section
+      id={id}
       className={className}
       initial={getInitialDirection()}
       whileInView={resetPosition()}
@@ -46,6 +49,19 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
         ease: [0.22, 1, 0.36, 1] // Custom cubic bezier for smooth motion
       }}
     >
+      {/* Background glow effects */}
+      <div className="section-bg-glow section-bg-glow-1"></div>
+      <div className="section-bg-glow section-bg-glow-2"></div>
+      
+      {/* Animated particles */}
+      <div className="section-particles">
+        <div className="section-particle"></div>
+        <div className="section-particle"></div>
+        <div className="section-particle"></div>
+        <div className="section-particle"></div>
+        <div className="section-particle"></div>
+      </div>
+      
       {children}
     </motion.section>
   );
