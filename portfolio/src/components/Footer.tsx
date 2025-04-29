@@ -36,12 +36,13 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#home" className="text-gray-400 hover:text-primary transition-colors">Home</a></li>
               <li><a href="#about" className="text-gray-400 hover:text-primary transition-colors">About</a></li>
+              <li><a href="#experience" className="text-gray-400 hover:text-primary transition-colors">Experience</a></li>
               <li><a href="#projects" className="text-gray-400 hover:text-primary transition-colors">Projects</a></li>
               <li><a href="#certifications" className="text-gray-400 hover:text-primary transition-colors">Certifications</a></li>
               <li><a href="#contact" className="text-gray-400 hover:text-primary transition-colors">Contact</a></li>
             </ul>
           </motion.div>
-          
+         
           {/* Contact */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
