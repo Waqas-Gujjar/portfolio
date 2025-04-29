@@ -62,12 +62,12 @@ const About = () => {
             </h3>
             <div className="space-y-4 text-gray-300">
               <p>
-                I'm a passionate front-end developer with expertise in creating responsive, 
-                user-friendly web applications. With a strong foundation in modern JavaScript frameworks
-                like React, I specialize in building seamless interactive experiences.
+                I'm a passionate Back-end developer with expertise in creating responsive, 
+                user-friendly web applications. With a strong foundation in modern Python frameworks
+                like Django,Fast-Api,Rest-Api I specialize in building seamless interactive experiences.
               </p>
               <p>
-                My journey in web development began over 5 years ago, and since then, 
+                My journey in web development began over 2 years ago, and since then, 
                 I've continuously expanded my skill set to stay current with the latest technologies
                 and best practices in the industry.
               </p>

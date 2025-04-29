@@ -7,7 +7,7 @@ import SocialIcons from './SocialIcons'
 const Hero = () => {
   const [text, setText] = useState("")
   const [fullTextVisible, setFullTextVisible] = useState(false)
-  const fullText = "Front-End Developer specializing in creating beautiful, interactive web experiences with modern technologies."
+  const fullText = "Back-End Developer specializing in creating REST-api and FAST-API, and build application in Django  , interactive web experiences with modern technologies."
   
   // Typing animation effect
   useEffect(() => {
