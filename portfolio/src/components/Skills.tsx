@@ -3,7 +3,7 @@ import { FiCode, FiDatabase, FiServer, FiCloud, FiTool } from 'react-icons/fi'
 import { 
   SiPython, SiJavascript, SiHtml5, SiCss3, 
   SiDjango, SiReact, SiTailwindcss, 
-  SiAmazonaws, SiCloudinary, SiVercel, SiRender,
+  SiAmazon, SiCloudinary, SiVercel, SiRender,
   SiMysql, SiSqlite, SiPostgresql,
   SiDocker, SiGithub
 } from 'react-icons/si'
@@ -34,7 +34,7 @@ const Skills = () => {
       category: "Cloud",
       icon: <FiCloud />,
       items: [
-        { name: "AWS", icon: <SiAmazonaws /> },
+        { name: "AWS", icon: <SiAmazon /> },
         { name: "Cloudinary", icon: <SiCloudinary /> },
         { name: "Render", icon: <SiRender /> },
         { name: "Vercel", icon: <SiVercel /> },
@@ -130,4 +130,4 @@ const Skills = () => {
   )
 }
 
-export default Skills 
+export default Skills
