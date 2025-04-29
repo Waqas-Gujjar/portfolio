@@ -28,7 +28,7 @@ const ParticleEffect = ({
   minSpeed = 1,
   maxSpeed = 3
 }: ParticleEffectProps) => {
-  const [ setParticles] = useState<Particle[]>([]);
+  const [particles, setParticles] = useState<Particle[]>([]); // ✅ Fixed
 
   useEffect(() => {
     const container = document.getElementById(containerId);
@@ -65,15 +65,13 @@ const ParticleEffect = ({
       element.style.opacity = '0.6';
       element.style.borderRadius = '50%';
       element.style.filter = 'blur(1px)';
-      
-      // Apply random animation
       element.style.animation = `floatParticle ${3 + Math.random() * 7}s ease-in-out infinite`;
       element.style.animationDelay = `${Math.random() * 5}s`;
-      
+
       container.appendChild(element);
     });
 
-    // Cleanup function
+    // Cleanup
     return () => {
       newParticles.forEach(particle => {
         const element = document.getElementById(`particle-${particle.id}`);
@@ -84,7 +82,7 @@ const ParticleEffect = ({
     };
   }, [containerId, count, colors, minSize, maxSize, minSpeed, maxSpeed]);
 
-  return null; // This component doesn't render any JSX, it manipulates the DOM directly
+  return null;
 };
 
-export default ParticleEffect; 
+export default ParticleEffect;
