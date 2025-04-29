@@ -28,7 +28,7 @@ const ParticleEffect = ({
   minSpeed = 1,
   maxSpeed = 3
 }: ParticleEffectProps) => {
-  const [particles, setParticles] = useState<Particle[]>([]);
+  const [ setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
     const container = document.getElementById(containerId);

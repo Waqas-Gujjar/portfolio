@@ -1,8 +1,8 @@
-export const initCustomCursor = (): void => {
+export const initCustomCursor = (): (() => void) => {
   const cursor = document.querySelector('.cursor');
   const cursorDot = document.querySelector('.cursor-dot');
   
-  if (!cursor || !cursorDot) return;
+  if (!cursor || !cursorDot) return () => {};
   
   // Track cursor position with smooth following
   let mouseX = 0;
@@ -52,7 +52,7 @@ export const initCustomCursor = (): void => {
   });
   
   // Add click-through behavior for form elements
-  document.addEventListener('click', (e) => {
+  document.addEventListener('click', () => {
     // If over a form element, let the native click happen
     if (!isOverFormElement) {
       // Normal custom cursor behavior

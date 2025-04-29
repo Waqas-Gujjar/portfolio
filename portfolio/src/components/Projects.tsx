@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardFooter } from './ui/card';
 import { Button } from './ui/button';
 import { cn } from '../utils/shadcn';
-import { CodeBracketIcon, ArrowTopRightOnSquareIcon, CommandLineIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
+import { CodeBracketIcon,  CommandLineIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
 
 interface ProjectType {
   id: number;

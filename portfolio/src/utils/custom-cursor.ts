@@ -1,7 +1,7 @@
 let cursor: HTMLElement | null = null;
 let cursorDot: HTMLElement | null = null;
 let links: NodeListOf<Element>;
-let buttons: NodeListOf<Element>;
+// let buttons: NodeListOf<Element>;
 let mouseX = 0;
 let mouseY = 0;
 let cursorX = 0;
@@ -31,7 +31,7 @@ export function initCustomCursor() {
 
   // Set up interactive elements
   links = document.querySelectorAll('a, button, [role="button"], .clickable, input[type="submit"], label, input[type="checkbox"], input[type="radio"]');
-  buttons = document.querySelectorAll('button, .button, [role="button"], input[type="submit"]');
+  // buttons = document.querySelectorAll('button, .button, [role="button"], input[type="submit"]');
 
   // Initial cursor position
   mouseX = cursorX = window.innerWidth / 2;
