@@ -1,5 +1,5 @@
 import { useState, useEffect, FormEvent, useRef } from 'react'
-import { Canvas } from '@react-three/fiber'
+// import { Canvas } from '@react-three/fiber'
 import { motion } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
