@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect} from 'react';
 
 interface Particle {
   id: number;
@@ -28,7 +28,7 @@ const ParticleEffect = ({
   minSpeed = 1,
   maxSpeed = 3
 }: ParticleEffectProps) => {
-  const [, setParticles] = useState<Particle[]>([]); // ✅ Fixed
+  // const [, setParticles] = useState<Particle[]>([]); // ✅ Fixed
 
   useEffect(() => {
     const container = document.getElementById(containerId);
@@ -49,7 +49,7 @@ const ParticleEffect = ({
       });
     }
 
-    setParticles(newParticles);
+    // setParticles(newParticles);
 
     // Create actual DOM elements
     newParticles.forEach(particle => {

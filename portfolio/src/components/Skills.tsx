@@ -1,4 +1,4 @@
-import { FaPython, FaJs, FaHtml5, FaCss3Alt, FaDocker, FaLinux, FaGithub, FaAws } from 'react-icons/fa';
+import { FaPython, FaJs, FaHtml5, FaCss3Alt, FaDocker, FaLinux, FaGithub } from 'react-icons/fa';
 import { SiDjango, SiTailwindcss, SiPostgresql, SiMysql, SiSqlite, SiVercel, SiDigitalocean, SiHtmx, SiFastapi, SiInvoiceninja, SiMongodb, SiClarifai, SiRailway, SiGitlab, SiGithubactions, SiBitbucket, SiCodefresh, SiReact } from 'react-icons/si';
 import { motion } from 'framer-motion';
 
