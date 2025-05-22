@@ -49,7 +49,7 @@ const NavBar = () => {
         >
           <div className="w-10 h-10 overflow-hidden rounded-full mr-3 border-2 border-primary/30">
             <img 
-              src="images\image.jpg.HEIC.jpg" 
+              src="images\image.jpg" 
               alt="Logo" 
               className="w-full h-full object-cover"
               onError={(e) => {

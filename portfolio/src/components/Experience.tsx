@@ -50,33 +50,24 @@ const ExperienceItem = ({ title, company, period, description, isLast = false }:
 const Experience = () => {
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Innovations Inc.",
-      period: "Jan 2022 - Present",
+      title: "Software Engineer Intern",
+      company: "The Vista.One Company",
+      period: "Dec'07 – March",
       description: [
-        "Led the development of responsive React applications with TypeScript, improving user engagement by 35%",
-        "Implemented modern UI libraries and frameworks such as Tailwind CSS and Shadcn UI",
-        "Mentored junior developers and conducted code reviews to ensure codebase quality and best practices"
+        "Developed a sale-based CRM application using python and Django to centralize company-wide sales tracking and Improving data visibility for unlimited users.",
+        "Build REST-API for seamless for frontend-backend integrations.",
+        "Deploy on AWS and use database Postgres.",
+        "Collaborated with team members using version control systems such as Git to organize modifications and assign tasks."
       ]
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Solutions Ltd.",
-      period: "Mar 2019 - Dec 2021",
+      title: "Python Intern",
+      company: "CodeAlpha",
+      period: "Oct'01-Nov",
       description: [
-        "Developed and maintained multiple client-facing web applications using React and Redux",
-        "Collaborated with UX/UI designers to implement pixel-perfect, responsive designs",
-        "Optimized application performance, reducing load times by 40% through code splitting and lazy loading"
-      ]
-    },
-    {
-      title: "Junior Web Developer",
-      company: "Creative Web Agency",
-      period: "Jun 2017 - Feb 2019",
-      description: [
-        "Built responsive websites using HTML, CSS, and JavaScript for various clients",
-        "Assisted in the development of interactive UI components and animations",
-        "Participated in daily stand-ups and sprint planning sessions in an Agile environment"
+        "Designed and implemented a fully functional Hameman game using Python, focusing on logic development, user interaction, and error handling to ensure a seamless gaming experience.",
+        "Created a stock portfolio management tool to track and analyze stock performance in real-time. Integrated APIs for live data updates and implemented features like profit/loss calculation and portfolio visualization.",
+        "Developed a Python script to organize files in a specified directory by categorizing them into folders based on file type. Enhanced efficiency by automating repetitive file management tasks."
       ]
     },
   ];

@@ -18,16 +18,6 @@ interface ProjectType {
 
 const projects: ProjectType[] = [
   {
-    id: 1,
-    title: "E-Commerce Dashboard",
-    description: "A modern admin dashboard with dark mode, analytics charts, and product management features built with React and Shadcn UI.",
-    image: "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?auto=format&fit=crop&q=80&w=2901&ixlib=rb-4.0.3",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    demoLink: "#",
-    codeLink: "#",
-    category: "web"
-  },
-  {
     id: 2,
     title: "Social Media App",
     description: "A full-featured social platform with real-time messaging, post sharing, and user authentication system.",
@@ -48,43 +38,31 @@ const projects: ProjectType[] = [
     category: "ai"
   },
   {
-    id: 4,
-    title: "Weather Forecast App",
-    description: "A sleek weather application showing current conditions and 5-day forecasts with interactive maps.",
-    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&q=80&w=2940&ixlib=rb-4.0.3",
-    tags: ["React", "Weather API", "ChartJS", "Tailwind CSS"],
-    demoLink: "#",
-    codeLink: "#",
-    category: "mobile"
-  },
-  {
-    id: 5,
-    title: "Task Management System",
-    description: "A Kanban-style project management tool with drag-and-drop functionality and team collaboration features.",
-    image: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&q=80&w=2940&ixlib=rb-4.0.3",
-    tags: ["React", "DnD Kit", "Redux", "Firebase"],
+    id: 6,
+    title: "Reflex-GPT",
+    description: "Built Reflex-GPT in Python using Groq API for high-speed conversational AI with context-aware responses and multi-turn dialogue capabilities. Integrated Neon Postgres for efficient storage of user interactions, conversation history, and metadata, optimizing queries for scalability. Deployed the application using Docker for containerization and on a Virtual Machine (VM) for production, ensuring secure and scalable performance. Open-sourced the project on GitHub with detailed documentation, setup instructions, and CI/CD pipelines for community contributions.",
+    image: "https://picsum.photos/seed/reflexgpt/600/400",
+    tags: ["Python", "Groq-API", "Neon-postgres", "Docker", "VM", "GitHub", "CI/CD"],
     demoLink: "#",
     codeLink: "#",
     category: "web"
   },
   {
-    id: 6,
-    title: "Crypto Portfolio Tracker",
-    description: "A cryptocurrency portfolio tracker with real-time price updates, historical charts, and market analytics.",
-    image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&q=80&w=2787&ixlib=rb-4.0.3",
-    tags: ["React", "CoinGecko API", "Recharts", "TypeScript"],
+    id: 7,
+    title: "Course Platform",
+    description: "Built a full-stack course platform using Django, enabling users to upload, watch, and manage courses. Implemented user authentication via email login and role-based access control for course creators and learners. Utilized Cloudinary for seamless uploading and hosting of course videos and images, ensuring fast delivery and scalability for media content. Designed a responsive and modern user interface using Tailwind CSS, HTMX for dynamic content updates, and Flowbite for pre-built UI components, improving user experience and interactivity. Containerized the application using Docker for consistent deployment and used SQLite for development. Published the project on GitHub with detailed documentation and setup instructions for easy collaboration.",
+    image: "https://picsum.photos/seed/courseplatform/600/400",
+    tags: ["Django", "HTML", "Htmx", "Tailwind", "Flowbite", "Cloudinary", "Docker", "SQLite", "GitHub"],
     demoLink: "#",
     codeLink: "#",
-    category: "finance"
+    category: "web"
   },
 ];
 
 const categories = [
   { id: "all", label: "All Projects" },
   { id: "web", label: "Web Apps" },
-  { id: "mobile", label: "Mobile Apps" },
   { id: "ai", label: "AI Projects" },
-  { id: "finance", label: "Finance Tools" },
 ];
 
 const Projects = () => {

@@ -1,7 +1,6 @@
 import { FaPython, FaJs, FaHtml5, FaCss3Alt, FaDocker, FaLinux, FaGithub, FaAws } from 'react-icons/fa';
-import { SiDjango, SiTailwindcss, SiPostgresql, SiMysql, SiSqlite, SiVercel, SiDigitalocean } from 'react-icons/si';
+import { SiDjango, SiTailwindcss, SiPostgresql, SiMysql, SiSqlite, SiVercel, SiDigitalocean, SiHtmx, SiFastapi, SiInvoiceninja, SiMongodb, SiClarifai, SiRailway, SiGitlab, SiGithubactions, SiBitbucket, SiCodefresh, SiReact } from 'react-icons/si';
 import { motion } from 'framer-motion';
-import React from 'react';
 
 const skills = [
   {
@@ -17,27 +16,32 @@ const skills = [
     category: 'Frameworks',
     items: [
       { name: 'Django', icon: <SiDjango className="text-green-700" /> },
-      { name: 'DRF', icon: <SiDjango className="text-green-500" /> },
+      { name: 'DRF', icon: <SiDjango className="text-red-400" /> },
+      { name: 'Fast-Api', icon: <SiFastapi className="text-green-500" /> },
+      { name: 'Django-Ninja', icon: <SiInvoiceninja className="text-gray-300" /> },
       { name: 'TailwindCSS', icon: <SiTailwindcss className="text-cyan-400" /> },
-      { name: 'Flowbite', icon: <SiTailwindcss className="text-cyan-300" /> },
-      { name: 'Refux-HTMX', icon: <SiDjango className="text-purple-400" /> },
+      { name: 'HTMX', icon: <SiHtmx className="text-purple-400" /> },
+      { name: 'React', icon: <SiReact className="text-blue-500" /> },
     ],
   },
   {
     category: 'Cloud Platforms',
     items: [
-      { name: 'DigitalOcean', icon: <SiDigitalocean className="text-blue-500" /> },
+      { name: 'Cloudinary', icon: <SiDigitalocean className="text-blue-500" /> },
+      { name: 'CloudFlare', icon: <SiClarifai className="text-blue-500" /> },
       { name: 'Natro', icon: <SiDigitalocean className="text-blue-300" /> },
-      { name: 'Vercel', icon: <SiVercel className="text-black" /> },
-      { name: 'AWS', icon: <FaAws className="text-orange-400" /> },
+      { name: 'Vercel', icon: <SiVercel className="text-gray-700" /> },
+     
     ],
   },
   {
     category: 'Databases',
     items: [
-      { name: 'MySQL', icon: <SiMysql className="text-blue-400" /> },
-      { name: 'SQLite', icon: <SiSqlite className="text-gray-400" /> },
+      { name: 'MySQL', icon: <SiMysql className="text-orange-400" /> },
+      { name: 'SQLite', icon: <SiSqlite className="text-yellow-400" /> },
       { name: 'PostgreSQL', icon: <SiPostgresql className="text-blue-700" /> },
+      { name: 'Mongodb', icon: <SiMongodb className="text-green-700" /> },
+
     ],
   },
   {
@@ -51,8 +55,18 @@ const skills = [
   {
     category: 'Deployment',
     items: [
-      { name: 'Vercel', icon: <SiVercel className="text-black" /> },
-      { name: 'AWS', icon: <FaAws className="text-orange-400" /> },
+      { name: 'Vercel', icon: <SiVercel className="text-gray-500" /> },
+      { name: 'Railway', icon: <SiRailway className="text-orange-400" /> },
+      
+    ],
+  },
+  {
+    category: 'CI/CD Pipeline',
+    items: [
+      { name: 'GitLab', icon: <SiGitlab className="text-orange-500" /> },
+      { name: 'GitHub Actions', icon: <SiGithubactions className="text-blue-500" /> },
+      { name: 'Bitbucket', icon: <SiBitbucket className="text-blue-700" /> },
+      { name: 'Codefresh', icon: <SiCodefresh className="text-green-500" /> },
     ],
   },
 ];
@@ -93,7 +107,7 @@ const Skills = () => {
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skills.map((group, idx) => (
+          {skills.map((group) => (
             <motion.div
               key={group.category}
               className="bg-black/40 backdrop-blur-md rounded-xl p-6 shadow-lg border border-primary/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-primary/60 group glass-card"
