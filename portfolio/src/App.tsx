@@ -3,6 +3,7 @@ import { useState, useEffect, FormEvent, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Skills from './components/Skills'
 import About from './components/About'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
@@ -100,6 +101,7 @@ function App() {
       
       <main className="bg-background text-foreground">
         <Hero />
+        <Skills />
         <About />
         <Experience />
         <Certifications />
@@ -113,7 +115,6 @@ function App() {
             <div className="absolute bottom-0 right-1/3 w-80 h-80 rounded-full bg-primary/10 blur-3xl"></div>
             <div className="absolute inset-0 bg-[linear-gradient(rgba(105,30,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(105,30,255,0.01)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
           </div>
-          
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

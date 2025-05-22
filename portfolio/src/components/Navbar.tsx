@@ -49,7 +49,7 @@ const NavBar = () => {
         >
           <div className="w-10 h-10 overflow-hidden rounded-full mr-3 border-2 border-primary/30">
             <img 
-              src="/images/logo.jpg" 
+              src="images\image.jpg.HEIC.jpg" 
               alt="Logo" 
               className="w-full h-full object-cover"
               onError={(e) => {
@@ -64,7 +64,7 @@ const NavBar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-1">
-          {["Home", "About", "Experience", "Certifications", "Projects", "Contact"].map((item, index) => (
+          {["Home", "About", "Skills", "Experience", "Certifications", "Projects", "Contact"].map((item, index) => (
             <motion.a
               key={item}
               href={`#${item.toLowerCase()}`}
