@@ -817,19 +817,21 @@ nav {
 /* Profile image styling */
 .profile-container {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 280px;
+  height: 280px;
   margin: 0 auto 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .profile-border-glow {
   position: absolute;
-  inset: -5px;
+  inset: -3px;
   border-radius: 50%;
-  padding: 5px;
+  padding: 3px;
   background: linear-gradient(
     135deg,
     var(--color-purple) 0%,
@@ -846,7 +848,7 @@ nav {
      linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  filter: blur(1px);
+  filter: blur(0.5px);
 }
 
 @keyframes borderRotate {
@@ -855,28 +857,29 @@ nav {
 }
 
 .profile-image {
-  width: 170px;
-  height: 170px;
+  width: 270px;
+  height: 270px;
   object-fit: cover;
-  border-radius: 50%; /* Make image circular */
-  border: 3px solid rgba(142, 36, 170, 0.3);
+  object-position: center top;
+  border-radius: 50%;
+  border: 4px solid rgba(142, 36, 170, 0.3);
   background-color: var(--color-dark);
   position: relative;
   z-index: 2;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 
     0 10px 30px -10px rgba(0, 0, 0, 0.5),
     0 0 20px rgba(142, 36, 170, 0.3);
-  filter: brightness(0.95);
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .profile-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) rotate(2deg);
   border-color: var(--color-purple-bright);
   box-shadow: 
     0 15px 40px -10px rgba(0, 0, 0, 0.6),
     0 0 25px rgba(142, 36, 170, 0.5);
-  filter: brightness(1.05);
+  filter: brightness(1.2) contrast(1.15);
 }
 
 /* Profile border pulsing animation */
@@ -885,7 +888,7 @@ nav {
   position: absolute;
   inset: -15px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(142, 36, 170, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(142, 36, 170, 0.4) 0%, transparent 70%);
   z-index: -1;
   animation: pulse 2s ease-in-out infinite alternate;
 }
@@ -893,17 +896,17 @@ nav {
 @keyframes pulse {
   0% {
     transform: scale(1);
-    opacity: 0.3;
+    opacity: 0.4;
   }
   100% {
     transform: scale(1.1);
-    opacity: 0.6;
+    opacity: 0.7;
   }
 }
 
 /* Enhanced hover effect for the profile container */
 .profile-container:hover .profile-border-glow {
-  filter: blur(2px) brightness(1.2);
+  filter: blur(1px) brightness(1.3);
   animation: borderRotate 2s linear infinite;
   background: linear-gradient(
     135deg,
@@ -916,19 +919,20 @@ nav {
 
 .profile-container:hover .profile-border-glow::after {
   animation: pulse 1.5s ease-in-out infinite alternate;
-  background: radial-gradient(circle, rgba(187, 0, 255, 0.5) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(187, 0, 255, 0.6) 0%, transparent 70%);
 }
 
 @media (max-width: 767px) {
   .profile-container {
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 220px;
     margin: 0 auto 1.5rem;
   }
   
   .profile-image {
-    width: 140px;
-    height: 140px;
+    width: 210px;
+    height: 210px;
+    object-position: center 20%;
   }
 }
 
@@ -1062,7 +1066,7 @@ nav {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
+  /* -text-fill-color: transparent; */
   display: inline-block;
   position: relative;
 }
@@ -1099,7 +1103,7 @@ nav {
 .experience-section,
 .projects-section,
 .contact-section {
-  composes: section-common;
+  /* composes: section-common; */
   border: 1px solid rgba(142, 36, 170, 0.1);
   box-shadow: 
     0 15px 35px rgba(0, 0, 0, 0.2),
@@ -1780,7 +1784,7 @@ nav {
   font-weight: 700;
   margin-bottom: 1rem;
   background: var(--gradient-purple);
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
 }
 
@@ -2048,7 +2052,6 @@ textarea.form-control {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
 }
 
 .footer-social-icon {
@@ -2175,7 +2178,7 @@ textarea.form-control {
   font-weight: 700;
   margin-bottom: 1rem;
   background: linear-gradient(45deg, var(--color-purple), var(--color-purple-light));
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
 }
 
@@ -2468,7 +2471,7 @@ input, textarea, select, .no-custom-cursor {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+  /* text-fill-color: transparent; */
   margin-bottom: 1rem;
 }
 
@@ -2776,7 +2779,7 @@ input, textarea, select, .no-custom-cursor {
   position: absolute;
   inset: -15px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(142, 36, 170, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(142, 36, 170, 0.4) 0%, transparent 70%);
   z-index: -1;
   animation: pulse 2s ease-in-out infinite alternate;
 }
@@ -2784,11 +2787,11 @@ input, textarea, select, .no-custom-cursor {
 @keyframes pulse {
   0% {
     transform: scale(1);
-    opacity: 0.3;
+    opacity: 0.4;
   }
   100% {
     transform: scale(1.1);
-    opacity: 0.6;
+    opacity: 0.7;
   }
 }
 
@@ -3552,4 +3555,102 @@ input, textarea, select, .no-custom-cursor {
   animation: confetti 5s ease-in infinite;
   animation-delay: 1.7s;
   background: var(--primary-color);
+}
+
+/* Custom Cursor Styles */
+* {
+  cursor: none !important;
+}
+
+.cursor-dot {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(45deg, #691EFF, #9B51E0);
+  border-radius: 50%;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease-out;
+}
+
+.cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(105, 30, 255, 0.5);
+  border-radius: 50%;
+  z-index: 9998;
+  mix-blend-mode: difference;
+  transition: all 0.3s ease-out;
+  animation: cursorAura 2s infinite alternate;
+}
+
+@keyframes cursorAura {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(105, 30, 255, 0);
+  }
+  100% {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(105, 30, 255, 0.3);
+  }
+}
+
+/* Hover effects */
+.cursor-dot.hovered {
+  transform: scale(1.5);
+  background: linear-gradient(45deg, #9B51E0, #691EFF);
+  box-shadow: 0 0 10px rgba(105, 30, 255, 0.8);
+}
+
+.cursor-ring.hovered {
+  width: 50px;
+  height: 50px;
+  border-color: rgba(155, 81, 224, 0.8);
+  animation: cursorAuraHover 1s infinite alternate;
+}
+
+@keyframes cursorAuraHover {
+  0% {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(105, 30, 255, 0.3);
+  }
+  100% {
+    transform: scale(1.4);
+    box-shadow: 0 0 20px rgba(105, 30, 255, 0.5);
+  }
+}
+
+/* Disable custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+  * {
+    cursor: auto !important;
+  }
+}
+
+/* Force normal cursor on form elements */
+input, 
+textarea, 
+select, 
+option {
+  cursor: text !important;
+}
+
+/* Force pointer cursor on buttons and links */
+button, 
+a, 
+.submit-button, 
+input[type="submit"], 
+input[type="button"] {
+  cursor: pointer !important;
 }

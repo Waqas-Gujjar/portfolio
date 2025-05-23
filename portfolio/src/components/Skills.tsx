@@ -86,7 +86,7 @@ const cardVariants: Variants = {
       type: "spring",
       bounce: 0.4,
       duration: 0.8,
-      delay: i * 0.2
+      delay: i * 0.1
     }
   })
 };
@@ -101,29 +101,33 @@ const SkillItem = ({ name, icon }: SkillItemProps) => {
 
   return (
     <motion.div
-      className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors"
+      className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white/10 transition-all duration-300 hover:scale-105"
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       whileHover={{ x: 5 }}
     >
-      <motion.span 
-        className="text-xl"
+      <motion.div 
+        className="w-10 h-10 flex items-center justify-center rounded-lg bg-black/30 text-xl"
         animate={isHovered ? {
-          rotate: 360,
-          scale: [1, 1.2, 1],
+          rotate: [0, -10, 10, -10, 0],
+          scale: [1, 1.2, 1.2, 1.2, 1],
           transition: { duration: 0.5 }
         } : {}}
       >
         {icon}
-      </motion.span>
-      <span className="text-gray-200 text-sm font-medium">{name}</span>
+      </motion.div>
+      <span className="text-gray-200 font-medium">{name}</span>
     </motion.div>
   );
 };
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 relative">
+    <section id="skills" className="py-20 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-purple-500/5 blur-3xl" />
+      
       <div className="container mx-auto px-4 relative">
         <motion.div 
           className="text-center mb-16"
@@ -132,40 +136,46 @@ const Skills = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Skills</span>
+            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Skills</span>
           </h2>
-          <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-primary to-purple-400 animate-glow" />
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+          <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-primary to-purple-400 animate-pulse" />
+          <p className="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">
             A comprehensive showcase of my technical expertise and professional capabilities
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skills.map((group, index) => (
             <motion.div
               key={group.category}
-              className="bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-lg p-4 border border-primary/10 hover:border-primary/30 transition-all duration-300 group"
+              className="bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-xl rounded-xl p-6 border border-primary/10 hover:border-primary/30 transition-all duration-300 group hover:shadow-xl hover:shadow-primary/5"
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.2 }}
               variants={cardVariants}
               custom={index}
               whileHover={{
-                boxShadow: '0 0 20px rgba(138, 43, 226, 0.15)',
-                y: -3
+                y: -5,
+                transition: { duration: 0.2 }
               }}
             >
-              <div className="relative mb-4">
-                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <div className="relative mb-6">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                   {group.category}
                 </h3>
-                <div className="w-8 h-0.5 bg-gradient-to-r from-primary to-purple-400" />
-                <span className="absolute -top-1 right-0 text-4xl opacity-5 group-hover:opacity-10 transition-opacity">
+                <div className="w-12 h-1 bg-gradient-to-r from-primary to-purple-400 rounded-full transform origin-left group-hover:scale-x-125 transition-transform" />
+                <motion.span 
+                  className="absolute -top-2 right-0 text-5xl opacity-5 group-hover:opacity-10 transition-opacity"
+                  animate={{
+                    rotate: [0, 5, -5, 5, 0],
+                    transition: { duration: 5, repeat: Infinity }
+                  }}
+                >
                   {group.items[0].icon}
-                </span>
+                </motion.span>
               </div>
               
-              <div className="space-y-1">
+              <div className="space-y-2">
                 {group.items.map((item) => (
                   <SkillItem
                     key={item.name}

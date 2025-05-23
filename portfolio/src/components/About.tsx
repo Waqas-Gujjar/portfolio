@@ -92,14 +92,17 @@ const About = () => {
               {/* Main image container */}
               <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-black p-2">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <img 
-                  src="/images/about-image.jpg" 
-                  alt="About Me" 
-                  className="w-full h-auto rounded-lg object-cover transition-transform duration-500 group-hover:scale-105"
-                  onError={(e) => {
-                    e.currentTarget.src = `https://via.placeholder.com/600x800/1a1a2e/ffffff?text=Developer`;
-                  }}
-                />
+                <div className="profile-container">
+                  <div className="profile-border-glow"></div>
+                  <img 
+                    src="/images/IMG-20250202-WA0000.jpg" 
+                    alt="About Me" 
+                    className="profile-image"
+                    onError={(e) => {
+                      e.currentTarget.src = `https://via.placeholder.com/600x800/1a1a2e/ffffff?text=Developer`;
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
