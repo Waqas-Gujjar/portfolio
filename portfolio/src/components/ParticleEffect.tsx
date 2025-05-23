@@ -1,88 +1,53 @@
-import { useEffect} from 'react';
-
-interface Particle {
-  id: number;
-  x: number;
-  y: number;
-  size: number;
-  color: string;
-  speed: number;
-}
+import { useCallback } from 'react';
+import { motion } from 'framer-motion';
 
 interface ParticleEffectProps {
   containerId: string;
-  count?: number;
-  colors?: string[];
-  minSize?: number;
-  maxSize?: number;
-  minSpeed?: number;
-  maxSpeed?: number;
 }
 
-const ParticleEffect = ({
-  containerId,
-  count = 20,
-  colors = ['#8A2BE2', '#9370DB', '#BA55D3', '#9932CC', '#4B0082'],
-  minSize = 3,
-  maxSize = 8,
-  minSpeed = 1,
-  maxSpeed = 3
-}: ParticleEffectProps) => {
-  // const [, setParticles] = useState<Particle[]>([]); // ✅ Fixed
+const ParticleEffect = ({ containerId }: ParticleEffectProps) => {
+  // Generate random positions for particles
+  const generateParticles = useCallback((count: number) => {
+    return Array.from({ length: count }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 3 + 1,
+      duration: Math.random() * 20 + 10,
+      delay: Math.random() * 5,
+    }));
+  }, []);
 
-  useEffect(() => {
-    const container = document.getElementById(containerId);
-    if (!container) return;
+  const particles = generateParticles(50);
 
-    const containerRect = container.getBoundingClientRect();
-    const newParticles: Particle[] = [];
-
-    // Create particles
-    for (let i = 0; i < count; i++) {
-      newParticles.push({
-        id: i,
-        x: Math.random() * containerRect.width,
-        y: Math.random() * containerRect.height,
-        size: minSize + Math.random() * (maxSize - minSize),
-        color: colors[Math.floor(Math.random() * colors.length)],
-        speed: minSpeed + Math.random() * (maxSpeed - minSpeed)
-      });
-    }
-
-    // setParticles(newParticles);
-
-    // Create actual DOM elements
-    newParticles.forEach(particle => {
-      const element = document.createElement('div');
-      element.classList.add('particle');
-      element.id = `particle-${particle.id}`;
-      element.style.position = 'absolute';
-      element.style.left = `${particle.x}px`;
-      element.style.top = `${particle.y}px`;
-      element.style.width = `${particle.size}px`;
-      element.style.height = `${particle.size}px`;
-      element.style.backgroundColor = particle.color;
-      element.style.opacity = '0.6';
-      element.style.borderRadius = '50%';
-      element.style.filter = 'blur(1px)';
-      element.style.animation = `floatParticle ${3 + Math.random() * 7}s ease-in-out infinite`;
-      element.style.animationDelay = `${Math.random() * 5}s`;
-
-      container.appendChild(element);
-    });
-
-    // Cleanup
-    return () => {
-      newParticles.forEach(particle => {
-        const element = document.getElementById(`particle-${particle.id}`);
-        if (element && element.parentNode) {
-          element.parentNode.removeChild(element);
-        }
-      });
-    };
-  }, [containerId, count, colors, minSize, maxSize, minSpeed, maxSpeed]);
-
-  return null;
+  return (
+    <div id={containerId} className="absolute inset-0 overflow-hidden pointer-events-none">
+      {particles.map((particle) => (
+        <motion.div
+          key={particle.id}
+          className="absolute rounded-full bg-primary/20"
+          style={{
+            width: particle.size,
+            height: particle.size,
+            left: `${particle.x}%`,
+            top: `${particle.y}%`,
+          }}
+          animate={{
+            y: [0, -30, 0],
+            x: [0, 15, 0],
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.5, 0.2],
+          }}
+          transition={{
+            duration: particle.duration,
+            delay: particle.delay,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default ParticleEffect;

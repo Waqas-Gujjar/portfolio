@@ -8,6 +8,7 @@ import About from './components/About'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Certifications from './components/Certifications'
+import Services from './components/Services'
 import { Button } from './components/ui/button'
 import { Input } from './components/ui/input'
 import { Textarea } from './components/ui/textarea'
@@ -18,6 +19,7 @@ import { useToast } from './components/ui/use-toast'
 import { ToastAction } from '@radix-ui/react-toast'
 import emailjs from '@emailjs/browser'
 import SocialIcons from './components/SocialIcons'
+import AnimatedBackground from './components/AnimatedBackground'
 
 function App() {
   const { toast } = useToast()
@@ -97,25 +99,21 @@ function App() {
 
   return (
     <>
+      <AnimatedBackground />
       <Navbar />
       
-      <main className="bg-background text-foreground">
+      <main className="relative">
         <Hero />
-        <Skills />
         <About />
+        <Services />
+        <Skills />
         <Experience />
         <Certifications />
         <Projects />
         
         {/* Contact Section */}
-        <section id="contact" ref={contactRef} className="py-20 relative overflow-hidden">
-          {/* Background elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl"></div>
-            <div className="absolute bottom-0 right-1/3 w-80 h-80 rounded-full bg-primary/10 blur-3xl"></div>
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(105,30,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(105,30,255,0.01)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-          </div>
-          <div className="container mx-auto px-4 relative z-10">
+        <section id="contact" ref={contactRef} className="py-20 relative">
+          <div className="container mx-auto px-4 relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -123,7 +121,10 @@ function App() {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-300 text-center">Get In Touch</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+                Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Touch</span>
+              </h2>
+              <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-primary to-purple-400 mb-4" />
               <p className="text-gray-400 text-center mb-10">
                 Have a project in mind or want to say hello? Feel free to reach out!
               </p>

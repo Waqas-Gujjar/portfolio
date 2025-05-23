@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { FiGithub, FiLinkedin, FiTwitter, FiInstagram } from 'react-icons/fi'
+import { FiGithub, FiLinkedin } from 'react-icons/fi'
+import { FaWhatsapp } from 'react-icons/fa'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -71,7 +72,7 @@ const Footer = () => {
                 <FiGithub className="text-xl" />
               </a>
               <a
-                href="https://linkedin.com/in/waqasyounas1"
+                href="https://www.linkedin.com/in/waqasyounas1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition-colors duration-300 hover:scale-125 hover:drop-shadow-[0_0_8px_rgba(138,43,226,0.6)]"
@@ -80,22 +81,13 @@ const Footer = () => {
                 <FiLinkedin className="text-xl" />
               </a>
               <a
-                href="https://twitter.com/"
+                href="https://wa.me/923255908332"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition-colors duration-300 hover:scale-125 hover:drop-shadow-[0_0_8px_rgba(138,43,226,0.6)]"
-                aria-label="Twitter"
+                aria-label="WhatsApp"
               >
-                <FiTwitter className="text-xl" />
-              </a>
-              <a
-                href="https://instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary transition-colors duration-300 hover:scale-125 hover:drop-shadow-[0_0_8px_rgba(138,43,226,0.6)]"
-                aria-label="Instagram"
-              >
-                <FiInstagram className="text-xl" />
+                <FaWhatsapp className="text-xl" />
               </a>
             </div>
           </motion.div>
